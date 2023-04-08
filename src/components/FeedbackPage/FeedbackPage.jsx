@@ -26,6 +26,8 @@ export const FeedbackPage = () => {
 			case "bad":
 				setBad(prev => prev + 1);
 				break;
+			default:
+				console.warn("Case not support :(");
 		}
 	}
 

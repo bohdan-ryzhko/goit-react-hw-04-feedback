@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-// import { CountTotalFeedback } from 'components/CountTotalFeedback/CountTotalFeedback';
+import { CountTotalFeedback } from 'components/CountTotalFeedback/CountTotalFeedback';
 import { StatisticsBoard, StatisticsInfo } from "./StatisticsList.styled";
 // import { CountPositiveFeedbackPercentage } from 'components/CountPositiveFeedbackPercentage/CountPositiveFeedbackPercentage';
 
@@ -19,7 +19,7 @@ export const StatiscticsList = ({ good, neutral, bad, total, positivePercentage 
 				<span>Bad: </span>
 				<span>{bad}</span>
 			</StatisticsInfo>
-			{/* <CountTotalFeedback total={total} /> */}
+			<CountTotalFeedback total={total} />
 			{/* <CountPositiveFeedbackPercentage positivePercentage={positivePercentage} /> */}
 		</StatisticsBoard>
 	)

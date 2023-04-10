@@ -1,0 +1,1 @@
+export const sum = (...nums) => nums.reduce((total, number) => total += number, 0);

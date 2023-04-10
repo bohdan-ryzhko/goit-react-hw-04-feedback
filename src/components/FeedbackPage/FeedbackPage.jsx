@@ -1,19 +1,20 @@
+import PropTypes from "prop-types";
 import { useState } from "react";
 import { Container, FeedbackPageInner, FeedbackTitle } from "./FeedbackPage.styled";
-import PropTypes from "prop-types";
 import { StatiscticsList } from "components/StatisticsList/StatisticsList";
 import { Notification } from "components/Notification/Notification";
 import { FeedbackOptions } from "components/FeedbackOptions/FeedbackOptions";
+import { sum } from "services/sum";
+import { calcGoodPercentage } from "services/calcGoodPercentage";
+import options from "options/options";
 
 export const FeedbackPage = () => {
-
 	const [good, setGood] = useState(0);
 	const [neutral, setNeutral] = useState(0);
 	const [bad, setBad] = useState(0);
 
-	const total = good + neutral + bad;
-	const positivePercentage = Math.round(good * 100 / total);
-	const options = ["good", "neutral", "bad"];
+	const total = sum(good, neutral, bad);
+	const positivePercentage = calcGoodPercentage(good, total);
 
 	const onLeaveFeedback = option => () => {
 		switch (option) {

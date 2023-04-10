@@ -1,0 +1,1 @@
+export const calcGoodPercentage = (good, total) => Math.round(good * 100 / total);
